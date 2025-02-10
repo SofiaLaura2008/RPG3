@@ -1,0 +1,6 @@
+#FileLock
+#Mon Feb 10 06:37:30 BRT 2025
+hostName=sofia_laura
+id=194ef389450d0bb2d7a4889b10f71736519087183fa
+method=file
+server=192.168.0.19\:59992

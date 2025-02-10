@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Combatentes</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Lista de Combatentes</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Força</th>
+                <th>Agilidade</th>
+                <th>Intelecto</th>
+                <th>Vigor</th>
+                <th>Presença</th>
+                <th>Nivel de exposição</th>
+                <th>Sanidade</th>
+                <th>Pontos de esforços</th>
+                <th>Vida</th>
+                <th>Deslocamento</th>
+                <th>Pontos de experiência por rodada</th>
+                <th>Luta</th>
+                <th>Fortitude</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="combatente: ${combatentes}">
+                <td th:text="${combatente.nome_personagem}"></td>
+                <td th:text="${combatente.idade_personagem}"></td>
+                <td th:text="${combatente.forca}"></td>
+                <td th:text="${combatente.agilidade}"></td>
+                <td th:text="${combatente.intelecto}"></td>
+                <td th:text="${combatente.vigor}"></td>
+                <td th:text="${combatente.presenca}"></td>
+                <td th:text="${combatente.nivel_exposicao}"></td>
+                <td th:text="${combatente.sanidade}"></td>
+                <td th:text="${combatente.pontos_esforcos}"></td>
+                <td th:text="${combatente.vida}"></td>
+                <td th:text="${combatente.deslocamento}"></td>
+                <td th:text="${combatente.p_e_rodada}"></td>
+                <td th:text="${combatente.luta}"></td>
+                <td th:text="${combatente.fortitude}"></td>
+                <td>
+                    <a th:href="@{/combatentes/{id}/editar(id=${combatente.id})}">Editar</a> |
+                    <a th:href="@{/combatentes/{id}/deletar(id=${combatente.id})}">Deletar</a> |
+                    <a th:href="@{/combatentes/{id}(id=${combatente.id})}">Ver mais detalhes</a>
+                </td>
+                
+                
+                
+                
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>

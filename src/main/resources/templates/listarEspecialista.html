@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Especialista</title>
+</head>
+<body>
+    <h1>Lista de Especialistas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Força</th>
+                <th>Agilidade</th>
+                <th>Intelecto</th>
+                <th>Vigor</th>
+                <th>Presença</th>
+                <th>Nivel de exposição</th>
+                <th>Sanidade</th>
+                <th>Pontos de esforços</th>
+                <th>Vida</th>
+                <th>Deslocamento</th>
+                <th>Pontos de experiência por rodada</th>
+                <th>Investigação</th>
+                <th>Percepção</th>
+                <th>Pontaria</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="especialista : ${especialistas}">
+                <td th:text="${especialista.id}"></td>
+                <td th:text="${especialista.nome_personagem}"></td>
+                <td th:text="${especialista.idade_personagem}"></td>
+                <td th:text="${especialista.forca}"></td>
+                <td th:text="${especialista.agilidade}"></td>
+                <td th:text="${especialista.intelecto}"></td>
+                <td th:text="${especialista.vigor}"></td>
+                <td th:text="${especialista.presenca}"></td>
+                <td th:text="${especialista.nivel_exposicao}"></td>
+                <td th:text="${especialista.sanidade}"></td>
+                <td th:text="${especialista.pontos_esforcos}"></td>
+                <td th:text="${especialista.vida}"></td>
+                <td th:text="${especialista.deslocamento}"></td>
+                <td th:text="${especialista.p_e_rodada}"></td>
+                <td th:text="${especialista.investigacao}"></td>
+                <td th:text="${especialista.percepcao}"></td>
+                <td th:text="${especialista.pontaria}"></td>
+                <td>
+                    <a th:href="@{/especialistas/{id}/editar(id=${especialista.id})}">Editar</a>
+                    |
+                    <a th:href="@{/especialistas/{id}/deletar(id=${especialista.id})}">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/novoEspecialista">Adicionar Novo Especialista</a>
+    <br>
+    <a href="/">Início</a>
+
+    <form action="/especialistas/filtro" method="get">
+        <label for="investigacao">Investigação:</label>
+        <input type="number" id="investigacao" name="investigacao" placeholder="Investigação" min="0" step="1">
+
+        <label for="percepcao">Percepção:</label>
+        <input type="number" id="percepcao" name="percepcao" placeholder="Percepção" min="0" step="1">
+
+        <label for="pontaria">Pontaria:</label>
+        <input type="number" id="pontaria" name="pontaria" placeholder="Pontaria" min="0" step="1">
+
+        <button type="submit">Filtrar</button>
+    </form>
+</body>
+</html>

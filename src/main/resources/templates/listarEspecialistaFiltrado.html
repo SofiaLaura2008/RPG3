@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Especialistas Filtrados</title>
+</head>
+<body>
+    <h1>Lista de Especialistas Filtrados</h1>
+
+    <div th:if="${#lists.isEmpty(especialistas)}">
+        <p>Nenhum especialista encontrado para os filtros aplicados.</p>
+    </div>
+
+    <div th:if="${not #lists.isEmpty(especialistas)}">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Investigação</th>
+                    <th>Percepção</th>
+                    <th>Pontaria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="especialista : ${especialistas}">
+                    <td th:text="${especialista.nome_personagem}"></td>
+                    <td th:text="${especialista.investigacao}"></td>
+                    <td th:text="${especialista.percepcao}"></td>
+                    <td th:text="${especialista.pontaria}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <a href="/especialista">Voltar para a lista completa</a>
+</body>
+</html>

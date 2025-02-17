@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ocultistas Filtrados</title>
+</head>
+<body>
+    <h1>Lista de Ocultistas Filtrados</h1>
+
+    <!-- Mensagem caso não encontre nenhum ocultista -->
+    <div th:if="${#lists.isEmpty(ocultistas)}">
+        <p>Nenhum ocultista encontrado para os filtros aplicados.</p>
+    </div>
+
+    <!-- Exibe a tabela apenas se houver ocultistas na lista -->
+    <div th:if="${not #lists.isEmpty(ocultistas)}">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Ocultismo</th>
+                    <th>Vontade</th>
+                    <th>Intuição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Para cada ocultista, exibe seus dados -->
+                <tr th:each="ocultista : ${ocultistas}">
+                    <td th:text="${ocultista.nome_personagem}"></td>
+                    <td th:text="${ocultista.ocultismo}"></td>
+                    <td th:text="${ocultista.vontade}"></td>
+                    <td th:text="${ocultista.intuicao}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href="/ocultistas">Voltar para a página anterior</a>
+</body>
+</html>

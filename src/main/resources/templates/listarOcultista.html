@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Ocultista</title>
+</head>
+<body>
+    <h1>Lista de Ocultistas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Força</th>
+                <th>Agilidade</th>
+                <th>Intelecto</th>
+                <th>Vigor</th>
+                <th>Presença</th>
+                <th>Nivel de exposição</th>
+                <th>Sanidade</th>
+                <th>Pontos de esforços</th>
+                <th>Vida</th>
+                <th>Deslocamento</th>
+                <th>Pontos de experiência por rodada</th>
+                <th>OCultismo</th>
+                <th>Vontade</th>
+                <th>Intuicao</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ocultista : ${ocultistas}">
+                <td th:text="${ocultista.id}"></td>
+                <td th:text="${ocultista.nome_personagem}"></td>
+                <td th:text="${ocultista.idade_personagem}"></td>
+                <td th:text="${ocultista.forca}"></td>
+                <td th:text="${ocultista.agilidade}"></td>
+                <td th:text="${ocultista.intelecto}"></td>
+                <td th:text="${ocultista.vigor}"></td>
+                <td th:text="${ocultista.presenca}"></td>
+                <td th:text="${ocultista.nivel_exposicao}"></td>
+                <td th:text="${ocultista.sanidade}"></td>
+                <td th:text="${ocultista.pontos_esforcos}"></td>
+                <td th:text="${ocultista.vida}"></td>
+                <td th:text="${ocultista.deslocamento}"></td>
+                <td th:text="${ocultista.p_e_rodada}"></td>
+                <td th:text="${ocultista.ocultismo}"></td>
+                <td th:text="${ocultista.vontade}"></td>
+                <td th:text="${ocultista.intuicao}"></td>
+                <td>
+                    <a th:href="@{/ocultistas/{id}/editar(id=${ocultista.id})}">Editar</a>
+                    |
+                    <a th:href="@{/ocultista/{id}/deletar(id=${ocultista.id})}">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/novoOcultista">Adicionar Novo Ocultista</a>
+    <br>
+    <a href="/">Início</a>
+
+    <form action="/ocultistas/filtro" method="get">
+        <label for="ocultismo">Ocultismo:</label>
+        <input type="number" id="ocultismo" name="ocultismo" >
+
+        <label for="vontade">Vontade:</label>
+        <input type="number" id="vontade" name="vontade" >
+
+        <label for="intuicao">Intuição:</label>
+        <input type="number" id="intuicao" name="intuicao">
+
+        <button type="submit">Filtrar</button>
+    </form>
+</body>
+</html>

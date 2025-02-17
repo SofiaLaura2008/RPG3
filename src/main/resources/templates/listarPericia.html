@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Pericias</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Lista de Pericias</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Força</th>
+                <th>Agilidade</th>
+                <th>Intelecto</th>
+                <th>Vigor</th>
+                <th>Presença</th>
+                <th>Nivel de exposição</th>
+                <th>Sanidade</th>
+                <th>Pontos de esforços</th>
+                <th>Vida</th>
+                <th>Deslocamento</th>
+                <th>Pontos de experiência por rodada</th>
+                <th>Acrobacia</th>
+                <th>Atletismo</th>
+                <th>Enganação</th>
+                <th>Fortitude</th>
+                <th>Furtividade</th>
+                <th>Intimidação</th>
+                <th>Intuição</th>
+                <th>Investigação</th>
+                <th>Luta</th>
+                <th>Medicina</th>
+                <th>Percepção</th>
+                <th>Pilotagem</th>
+                <th>Pontaria</th>
+                <th>Reflexos</th>
+                <th>Sobrevivência</th>
+                <th>Tática</th>
+                <th>Tencologia</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pericia: ${pericias}">
+                <td th:text="${pericia.id}"></td>
+                <td th:text="${pericia.nome_personagem}"></td>
+                <td th:text="${pericia.idade_personagem}"></td>
+                <td th:text="${pericia.forca}"></td>
+                <td th:text="${pericia.agilidade}"></td>
+                <td th:text="${pericia.intelecto}"></td>
+                <td th:text="${pericia.vigor}"></td>
+                <td th:text="${pericia.presenca}"></td>
+                <td th:text="${pericia.nivel_exposicao}"></td>
+                <td th:text="${pericia.sanidade}"></td>
+                <td th:text="${pericia.pontos_esforcos}"></td>
+                <td th:text="${pericia.vida}"></td>
+                <td th:text="${pericia.deslocamento}"></td>
+                <td th:text="${pericia.p_e_rodada}"></td>
+                <td th:text="${pericia.acrobacia}"></td>
+                <td th:text="${pericia.atletismo}"></td>
+                <td th:text="${pericia.enganacao}"></td>
+                <td th:text="${pericia.fortitude}"></td>
+                <td th:text="${pericia.furtividade}"></td>
+                <td th:text="${pericia.intimidacao}"></td>
+                <td th:text="${pericia.intuicao}"></td>
+                <td th:text="${pericia.investigacao}"></td>
+                <td th:text="${pericia.luta}"></td>
+                <td th:text="${pericia.medicina}"></td>
+                <td th:text="${pericia.percepcao}"></td>
+                <td th:text="${pericia.pilotagem}"></td>
+                <td th:text="${pericia.pontaria}"></td>
+                <td th:text="${pericia.reflexos}"></td>
+                <td th:text="${pericia.sobrevivencia}"></td>
+                <td th:text="${pericia.tatica}"></td>
+                <td th:text="${pericia.tecnologia}"></td>
+                <td>
+                    <a th:href="@{/pericias/{id}/editar(id=${pericia.id})}">Editar</a> |
+                    <a th:href="@{/pericias/{id}/deletar(id=${pericia.id})}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/novoPericia">Adicionar Pericia</a>
+    <br>
+    <a href="/">Início</a>
+
+    <form action="/pericias/filtro" method="get">
+        <label for="luta">Luta:</label>
+        <input type="number" id="luta" name="luta" min="0" max="100" value="{{luta}}"><br><br>
+
+        <label for="percepcao">Percepção:</label>
+        <input type="number" id="percepcao" name="percepcao" min="0" max="100" value="{{percepcao}}"><br><br>
+
+        <label for="reflexos">Reflexos:</label>
+        <input type="number" id="reflexos" name="reflexos" min="0" max="100" value="{{reflexos}}"><br><br>
+
+        <button type="submit">Filtrar</button>
+    </form>
+</body>
+</html>

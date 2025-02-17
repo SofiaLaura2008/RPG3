@@ -30,6 +30,7 @@
         </thead>
         <tbody>
             <tr th:each="combatente: ${combatentes}">
+                <td th:text="${combatente.id}"></td>
                 <td th:text="${combatente.nome_personagem}"></td>
                 <td th:text="${combatente.idade_personagem}"></td>
                 <td th:text="${combatente.forca}"></td>
@@ -47,16 +48,20 @@
                 <td th:text="${combatente.fortitude}"></td>
                 <td>
                     <a th:href="@{/combatentes/{id}/editar(id=${combatente.id})}">Editar</a> |
-                    <a th:href="@{/combatentes/{id}/deletar(id=${combatente.id})}">Deletar</a> |
-                    <a th:href="@{/combatentes/{id}(id=${combatente.id})}">Ver mais detalhes</a>
+                    <a th:href="@{/combatentes/{id}/deletar(id=${combatente.id})}">Deletar</a>
                 </td>
-                
-                
-                
-                
             </tr>
-
         </tbody>
     </table>
+    <a href="/novoCombatente">Adicionar Combatente</a>
+    <br>
+    <a href="/">Início</a>
+
+    <form action="/combatentes/filtro" method="get">
+        <input type="number" name="luta" placeholder="Quantidade de luta do personagem" />
+        <input type="number" name="fortitude" placeholder="quantidade de fortitude do personagem" />
+        <button type="submit">Filtrar</button>
+    </form>
+    
 </body>
 </html>

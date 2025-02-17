@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Pericia</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Editar Pericia</h1>
+    <form th:action="@{|/pericias/${pericias.id}/atualizar|}" th:method="post">
+        <input type="hidden" name="id" th:value="${pericias.id}" />
+
+        <label for="nome_personagem">Nome do Personagem:</label>
+        <input type="text" id="nome_personagem" name="nome_personagem" th:value="${pericias.nome_personagem}" required />
+        <br />
+
+        <label for="idade_personagem">Idade:</label>
+        <input type="number" id="idade_personagem" name="idade_personagem" th:value="${pericias.idade_personagem}" required>
+        <br>
+
+        <label for="forca">Força:</label>
+        <input type="number" id="forca" name="forca" th:value="${pericias.forca}" required>
+        <br>
+
+        <label for="agilidade">Agilidade:</label>
+        <input type="number" id="agilidade" name="agilidade" th:value="${pericias.agilidade}" required>
+        <br>
+
+        <label for="intelecto">Intelecto:</label>
+        <input type="number" id="intelecto" name="intelecto" th:value="${pericias.intelecto}" required>
+        <br>
+
+        <label for="vigor">Vigor:</label>
+        <input type="number" id="vigor" name="vigor" th:value="${pericias.vigor}" required>
+        <br>
+
+        <label for="presenca">Presença:</label>
+        <input type="number" id="presenca" name="presenca" th:value="${pericias.presenca}" required>
+        <br>
+
+        <label for="nivel_exposicao">Nível Exposição:</label>
+        <input type="number" id="nivel_exposicao" name="nivel_exposicao" th:value="${pericias.nivel_exposicao}" required>
+        <br>
+
+        <label for="sanidade">Sanidade:</label>
+        <input type="number" id="sanidade" name="sanidade" th:value="${pericias.sanidade}" required>
+        <br>
+
+        <label for="pontos_esforcos">Pontos Esforcos:</label>
+        <input type="number" id="pontos_esforcos" name="pontos_esforcos" th:value="${pericias.pontos_esforcos}" required>            
+        <br>
+
+        <label for="vida">Vida:</label>
+        <input type="number" id="vida" name="vida" th:value="${pericias.vida}" required>            
+        <br>
+
+        <label for="deslocamento">Deslocamento:</label>
+        <input type="number" id="deslocamento" name="deslocamento" th:value="${pericias.deslocamento}" required>        
+        <br>
+
+        <label for="p_e_rodada">Pontos de Esforços por Rodada:</label>
+        <input type="number" id="p_e_rodada" name="p_e_rodada" th:value="${pericias.p_e_rodada}" required> 
+        <br>
+
+        <label for="acrobacia">Acrobacia:</label>
+        <input type="number" id="acrobacia" name="acrobacia" th:value="${pericias.acrobacia}" required> 
+        <br>
+
+        <label for="atletismo">Atletismo:</label>
+        <input type="number" id="atletismo" name="atletismo" th:value="${pericias.atletismo}" required>     
+        <br>
+
+        <label for="enganacao">Enganação:</label>
+        <input type="number" id="enganacao" name="enganacao" th:value="${pericias.enganacao}" required>     
+        <br>
+
+        <label for="fortitude">Fortitude:</label>
+        <input type="number" id="fortitude" name="fortitude" th:value="${pericias.fortitude}" required>     
+        <br>
+
+        <label for="furtividade">Furtividade:</label>
+        <input type="number" id="furtividade" name="furtividade" th:value="${pericias.furtividade}" required>     
+        <br>
+
+        <label for="intimidacao">Intimidação:</label>
+        <input type="number" id="intimidacao" name="intimidacao" th:value="${pericias.intimidacao}" required>     
+        <br>
+
+        <label for="intuicao">Intuição:</label>
+        <input type="number" id="intuicao" name="intuicao" th:value="${pericias.intuicao}" required>     
+        <br>
+
+        <label for="investigacao">Investigação:</label>
+        <input type="number" id="investigacao" name="investigacao" th:value="${pericias.investigacao}" required>     
+        <br>
+
+        <label for="luta">Luta:</label>
+        <input type="number" id="luta" name="luta" th:value="${pericias.luta}" required>     
+        <br>
+
+        <label for="medicina">Medicina:</label>
+        <input type="number" id="medicina" name="medicina" th:value="${pericias.medicina}" required>     
+        <br>
+
+        <label for="percepcao">Percepção:</label>
+        <input type="number" id="percepcao" name="percepcao" th:value="${pericias.percepcao}" required>     
+        <br>
+
+        <label for="pilotagem">Pilotagem:</label>
+        <input type="number" id="pilotagem" name="pilotagem" th:value="${pericias.pilotagem}" required>     
+        <br>
+
+        <label for="pontaria">Pontaria:</label>
+        <input type="number" id="pontaria" name="pontaria" th:value="${pericias.pontaria}" required>     
+        <br>
+
+        <label for="reflexos">Reflexos:</label>
+        <input type="number" id="reflexos" name="reflexos" th:value="${pericias.reflexos}" required>     
+        <br>
+
+        <label for="sobrevivencia">Sobrevivência:</label>
+        <input type="number" id="sobrevivencia" name="sobrevivencia" th:value="${pericias.sobrevivencia}" required>     
+        <br>
+
+        <label for="tatica">Tática:</label>
+        <input type="number" id="tatica" name="tatica" th:value="${pericias.tatica}" required>     
+        <br>
+
+        <label for="tecnologia">Tecnologia:</label>
+        <input type="number" id="tecnologia" name="tecnologia" th:value="${pericias.tecnologia}" required>    
+
+
+        <button type="submit">Atualizar Combatente</button>
+    </form>
+</body>
+</html>

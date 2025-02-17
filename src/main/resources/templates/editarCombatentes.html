@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Combatente</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Editar Combatente</h1>
+    <form th:action="@{/combatentes/{id}/atualizar(id=${combatente.id})}" th:method="post">
+        <input type="hidden" th:value="${combatente.id}" />
+
+        <label for="nome_personagem">Nome do Personagem:</label>
+        <input type="text" id="nome_personagem" name="nome_personagem" th:value="${combatente.nome_personagem}" required />
+        <br />
+
+        <label for="idade_personagem">Idade do Personagem:</label>
+        <input type="number" id="idade_personagem" name="idade_personagem" th:value="${combatente.idade_personagem}" required />
+        <br />
+
+        <label for="forca">Força:</label>
+        <input type="number" id="forca" name="forca" th:value="${combatente.forca}" required />
+        <br />
+
+        <label for="agilidade">Agilidade:</label>
+        <input type="number" id="agilidade" name="agilidade" th:value="${combatente.agilidade}" required />
+        <br />
+
+        <label for="intelecto">Intelecto:</label>
+        <input type="number" id="intelecto" name="intelecto" th:value="${combatente.intelecto}" required />
+        <br />
+
+        <label for="vigor">Vigor:</label>
+        <input type="number" id="vigor" name="vigor" th:value="${combatente.vigor}" required />
+        <br />
+
+        <label for="presenca">Presença:</label>
+        <input type="number" id="presenca" name="presenca" th:value="${combatente.presenca}" required />
+        <br />
+
+        <label for="nivel_exposicao">Nível de Exposição:</label>
+        <input type="number" id="nivel_exposicao" name="nivel_exposicao" th:value="${combatente.nivel_exposicao}" required />
+        <br />
+
+        <label for="sanidade">Sanidade:</label>
+        <input type="number" id="sanidade" name="sanidade" th:value="${combatente.sanidade}" required />
+        <br />
+
+        <label for="pontos_esforcos">Pontos de Esforço:</label>
+        <input type="number" id="pontos_esforcos" name="pontos_esforcos" th:value="${combatente.pontos_esforcos}" required />
+        <br />
+
+        <label for="vida">Vida:</label>
+        <input type="number" id="vida" name="vida" th:value="${combatente.vida}" required />
+        <br />
+
+        <label for="deslocamento">Deslocamento:</label>
+        <input type="number" id="deslocamento" name="deslocamento" th:value="${combatente.deslocamento}" required />
+        <br />
+
+        <label for="p_e_rodada">Pontos de Esforço por Rodada:</label>
+        <input type="number" id="p_e_rodada" name="p_e_rodada" th:value="${combatente.p_e_rodada}" required />
+        <br />
+
+        <label for="luta">Luta:</label>
+        <input type="number" id="luta" name="luta" th:value="${combatente.luta}" required />
+        <br />
+
+        <label for="fortitude">Fortitude:</label>
+        <input type="number" id="fortitude" name="fortitude" th:value="${combatente.fortitude}" required />
+        <br />
+
+        <button type="submit">Atualizar Combatente</button>
+    </form>
+</body>
+</html>

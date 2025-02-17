@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perícias Filtradas</title>
+</head>
+<body>
+    <h1>Perícias Filtradas</h1>
+
+    <!-- Exibição das Perícias Filtradas -->
+    <ul>
+        <th:block th:each="pericia : ${pericias}">
+            <li th:text="${pericia.nome_personagem}"></li> -
+            <li th:text="${pericia.luta}"></li> -
+            <li th:text="${pericia.percepcao}"></li> -
+            <li th:text="${pericia.reflexos}"></li> -
+        </th:block>
+    </ul>
+
+    <!-- Link para voltar à página de todas as perícias -->
+    <a href="/pericias">Ver Todas as Perícias</a>
+
+</body>
+</html>

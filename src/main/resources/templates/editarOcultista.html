@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Combatente</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Editar Combatente</h1>
+    <form th:action="@{/ocultistas/{id}/atualizar(id=${ocultista.id})}" th:method="post">
+        <input type="hidden" th:value="${ocultista.id}" />
+
+        <label for="nome_personagem">Nome do Personagem:</label>
+        <input type="text" id="nome_personagem" name="nome_personagem" th:value="${ocultista.nome_personagem}" required />
+        <br />
+
+        <label for="idade_personagem">Idade do Personagem:</label>
+        <input type="number" id="idade_personagem" name="idade_personagem" th:value="${ocultista.idade_personagem}" required />
+        <br />
+
+        <label for="forca">Força:</label>
+        <input type="number" id="forca" name="forca" th:value="${ocultista.forca}" required />
+        <br />
+
+        <label for="agilidade">Agilidade:</label>
+        <input type="number" id="agilidade" name="agilidade" th:value="${ocultista.agilidade}" required />
+        <br />
+
+        <label for="intelecto">Intelecto:</label>
+        <input type="number" id="intelecto" name="intelecto" th:value="${ocultista.intelecto}" required />
+        <br />
+
+        <label for="vigor">Vigor:</label>
+        <input type="number" id="vigor" name="vigor" th:value="${ocultista.vigor}" required />
+        <br />
+
+        <label for="presenca">Presença:</label>
+        <input type="number" id="presenca" name="presenca" th:value="${ocultista.presenca}" required />
+        <br />
+
+        <label for="nivel_exposicao">Nível de Exposição:</label>
+        <input type="number" id="nivel_exposicao" name="nivel_exposicao" th:value="${ocultista.nivel_exposicao}" required />
+        <br />
+
+        <label for="sanidade">Sanidade:</label>
+        <input type="number" id="sanidade" name="sanidade" th:value="${ocultista.sanidade}" required />
+        <br />
+
+        <label for="pontos_esforcos">Pontos de Esforço:</label>
+        <input type="number" id="pontos_esforcos" name="pontos_esforcos" th:value="${ocultista.pontos_esforcos}" required />
+        <br />
+
+        <label for="vida">Vida:</label>
+        <input type="number" id="vida" name="vida" th:value="${ocultista.vida}" required />
+        <br />
+
+        <label for="deslocamento">Deslocamento:</label>
+        <input type="number" id="deslocamento" name="deslocamento" th:value="${ocultista.deslocamento}" required />
+        <br />
+
+        <label for="p_e_rodada">Pontos de Esforço por Rodada:</label>
+        <input type="number" id="p_e_rodada" name="p_e_rodada" th:value="${ocultista.p_e_rodada}" required />
+        <br />
+
+        <label for="ocultismo">Ocultismo:</label>
+        <input type="number" id="ocultismo" name="ocultismo" th:value="${ocultista.ocultismo}" required />
+        <br />
+
+        <label for="vontade">Vontade:</label>
+        <input type="number" id="vontade" name="vontade" th:value="${ocultista.vontade}" required />
+        <br />
+
+        <label for="intuicao">Intuição:</label>
+        <input type="number" id="intuicao" name="intuicao" th:value="${ocultista.intuicao}" required />
+        <br />
+
+        <button type="submit">Atualizar Ocultista</button>
+    </form>
+</body>
+</html>

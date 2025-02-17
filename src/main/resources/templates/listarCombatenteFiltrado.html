@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combatentes Filtrados</title>
+</head>
+<body>
+    <h1>Lista de Combatentes Filtrados</h1>
+    <ul>
+        <th:block th:each="combatente : ${combatentes}">
+            <li>
+                <span th:text="${combatente.nome_personagem}"></span> - 
+                <span th:text="${combatente.idade_personagem}"></span>- 
+                <span th:text="${combatente.luta}"></span>- 
+                <span th:text="${combatente.fortitude}"></span>
+            </li>
+        </th:block>
+    </ul>
+
+    <p th:if="${#lists.isEmpty(combatentes)}">Nenhum combatente encontrado.</p>
+
+    <a href="/combatentes">Voltar para a lista completa</a>
+</body>
+</html>

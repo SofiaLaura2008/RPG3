@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Missões</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de Missões</h1>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Dificuldade</th>
+                <th>Recompensa</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteração sobre as missões -->
+            <tr th:each="missao : ${missoes}">
+                <td th:text="${missao.id}"></td>
+                <td th:text="${missao.nome}"></td>
+                <td th:text="${missao.dificuldade}"></td>
+                <td th:text="${missao.recompensa}"></td>
+                <td th:text="${missao.descricao}"></td>
+                <td>
+                    <a th:href="@{/missoes/{id}/editar(id=${missao.id})}">Editar</a> |
+                    <a th:href="@{/missoes/{id}/deletar(id=${missao.id})}" onclick="return confirm('Deseja realmente excluir?')">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/novaMissao">Adicionar Missão</a>
+
+</body>
+</html>
